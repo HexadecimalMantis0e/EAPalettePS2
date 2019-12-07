@@ -21,7 +21,7 @@ if args.removealpha == True and args.unswizzle == False:
         color = struct.unpack('i', f0.read(4))[0]
         f1.write(struct.pack("i", color))
         f1.seek(-0x01, os.SEEK_CUR)
-        f1.write(bytearray([0x80]))
+        f1.write(bytearray([0xFF]))
     
     f0.close()
     f1.close()
